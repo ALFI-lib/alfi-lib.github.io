@@ -1,0 +1,10 @@
+/public/
+/resources/
+/.hugo_build.lock
+
+/.idea/*
+!/.idea/codeStyles/
+!/.idea/runConfigurations/
+
+/.vscode/*
+!/.vscode/settings.json

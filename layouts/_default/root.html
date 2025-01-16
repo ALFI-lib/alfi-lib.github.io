@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{ partial "docs/html-head" . }}
+  {{ partial "docs/inject/head" . }}
+  <meta name="robots" content="noindex">
+  <script>
+    const preffered = navigator.language || navigator.languages[0];
+    const supported = ['en', 'ru'];
+    const def = 'en';
+    const target = supported.find(l => preffered.startsWith(l)) || def;
+    location.replace(location + '/' + target);
+  </script>
+</head>
+<body>
+  <main class="container flex">
+    <aside class="book-menu">
+    </aside>
+    <div class="book-page">
+      <p lang="en" style="margin: 20px 0; font-size: 1.2em; line-height: 1.6;">
+        You were not automatically redirected to the site version in your language.<br>
+        This may have occurred due to an error or because JavaScript is disabled in your browser.<br>
+        Click <a href="./en">here</a> to access the English version of the site.
+      </p>
+      <p lang="ru" style="margin: 20px 0; font-size: 1.2em; line-height: 1.6;">
+        Вы не были автоматически перенаправлены на версию сайта с вашим языком.<br>
+        Это могло произойти из-за ошибки или отключённого JavaScript в вашем браузере.<br>
+        Нажмите <a href="./ru">здесь</a>, чтобы перейти на русскую версию сайта.
+      </p>
+    </div>
+    {{ if default true (default .Site.Params.BookToC .Params.BookToC) }}
+    <aside class="book-toc">
+    </aside>
+    {{ end }}
+  </main>
+</body>
+</html>
