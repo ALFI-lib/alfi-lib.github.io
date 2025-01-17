@@ -19,6 +19,12 @@ disableDefaultLanguageRedirect = true
 [markup]
 [markup.goldmark.renderer]
 	unsafe = true
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+	enable = true
+	[markup.goldmark.extensions.passthrough.delimiters]
+		block = [['$$', '$$'], ['\[', '\]']]
+		inline = [['$', '$'], ['\(', '\)']]
 [markup.tableOfContents]
 	startLevel = 1
 
@@ -51,6 +57,7 @@ enableGitInfo = true
 	BookEditPath = 'edit/main'
 	BookDateFormat = 'January 2, 2006'
 	BookSearch = true
+	BookGlobalKatex = true
 	BookPortableLinks = true
 	BookServiceWorker = true
 	BookTranslatedOnly = true
