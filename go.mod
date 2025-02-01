@@ -1,4 +1,4 @@
-module github.com/ALFI-library/alfi-library.github.io
+module github.com/ALFI-lib/alfi-lib.github.io
 
 go 1.23.2
 
