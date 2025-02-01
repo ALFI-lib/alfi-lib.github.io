@@ -1,4 +1,4 @@
-baseURL = 'https://alfi-library.github.io'
+baseURL = 'https://alfi-lib.github.io'
 
 defaultContentLanguageInSubdir = true
 disableDefaultLanguageRedirect = true
@@ -53,7 +53,7 @@ enableGitInfo = true
 	BookTheme = 'light'
 	BookToC = true
 	BookSection = 'docs'
-	BookRepo = 'https://github.com/ALFI-library/alfi-library.github.io'
+	BookRepo = 'https://github.com/ALFI-lib/alfi-lib.github.io'
 	BookEditPath = 'edit/main'
 	BookDateFormat = 'January 2, 2006'
 	BookSearch = true
