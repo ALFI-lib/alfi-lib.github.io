@@ -21,7 +21,7 @@ $$
 \tag{V.2}
 $$
 
-From (6) and (V.1):
+From (6), (V.1):
 
 <details>
 <summary>Intermediate expressions</summary>

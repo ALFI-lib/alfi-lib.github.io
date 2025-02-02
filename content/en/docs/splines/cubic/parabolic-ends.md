@@ -27,7 +27,7 @@ $$
 \tag{IV.2}
 $$
 
-From (5) (VI.1):
+From (5), (VI.1):
 
 $$
 \boxed{
@@ -36,7 +36,7 @@ $$
 \tag{IV.3}
 $$
 
-From (VI.2) and $d_{n-1} = \frac{c_n - c_{n-1}}{3h_{n-1}}$, we get:
+From (5), (VI.2):
 
 $$
 \boxed{
