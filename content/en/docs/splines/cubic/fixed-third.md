@@ -68,7 +68,7 @@ $$
 $$
 where $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{h_k}\right)$.
 
-Now the matrix can be solved using the [tridiagonal matrix algorithm](https://ru.wikipedia.org/wiki/Метод_прогонки).
+Now the matrix can be solved using the [tridiagonal matrix algorithm](https://en.wikipedia.org/wiki/Tridiagonal_matrix_algorithm).
 
 After finding the coefficients $c_k$, the other coefficients $b_k$ and $d_k$ can be computed using formulas (6) and (5) respectively.
 
