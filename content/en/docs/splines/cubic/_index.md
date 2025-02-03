@@ -183,7 +183,7 @@ Equations:
 - $h_2c_1 + (-h_2 - h_1)c_2 + h_1c_3 = 0$
 - $h_{n-1}c_{n-2} + (-h_{n-1} - h_{n-2})c_{n-1} + h_{n-2}c_n = 0$
 
-Matrix:
+Matrix (almost triangular):
 
 $$
 \begin{bmatrix}
