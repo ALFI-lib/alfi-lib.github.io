@@ -1,4 +1,5 @@
 baseURL = 'https://alfi-lib.github.io'
+enableGitInfo = true
 
 defaultContentLanguageInSubdir = true
 disableDefaultLanguageRedirect = true
@@ -45,9 +46,6 @@ disableDefaultLanguageRedirect = true
 [module]
 [[module.imports]]
 	path = 'github.com/pasabanov/hugo-book'
-
-disablePathToLower = false
-enableGitInfo = true
 
 [params]
 	BookTheme = 'light'
