@@ -3,8 +3,9 @@ title = 'Parabolic-ends'
 weight = 4
 +++
 
-A "Parabolic-ends" cubic spline is a spline whose end segments are second-degree curves or parabolas.\
-This spline is a special case of the "Fixed-third" spline, where the third derivatives at the endpoints are set to zero.
+A "Parabolic-ends" cubic spline is a spline whose end segments are second-degree curves or parabolas.
+
+It is a special case of the ["Fixed-third" spline](fixed-third.md), where the third derivatives at the endpoints are set to zero.
 
 Conditions: $S_1'''(x_1) = 0, \ S_{n-1}'''(x_n) = 0$.
 
@@ -91,6 +92,6 @@ $$
 
 Thus, we get only one equation instead of two.
 
-To resolve this situation, we equate the magnitudes of $c_1$ and $c_2$ (which is fictitious).
+To resolve this situation, we equate the absolute values of $c_1$ and $c_2$ (which is fictitious).
 
-Then $c_1$ and $c_2$ will be equal to zero.
+Then $c_1$ and $c_2$ are equal to zero.

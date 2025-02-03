@@ -3,7 +3,9 @@ title = 'Fixed-third'
 weight = 7
 +++
 
-A "Fixed-third" cubic spline is a spline where the third derivatives at the endpoints are fixed. A special case is the "Parabolic-ends" spline, where the third derivatives at the endpoints are set to zero.
+A "Fixed-third" cubic spline is a spline where the third derivatives at the endpoints are fixed.
+
+A special case is the ["Parabolic-ends" spline](parabolic-ends.md), where the third derivatives at the endpoints are set to zero.
 
 Conditions: $S_1'''(x_1) = f'''(x_1), \ S_{n-1}'''(x_n) = f'''(x_n)$.
 
@@ -88,9 +90,9 @@ $$
 \end{cases}
 $$
 
-Thus, if the third derivatives at the endpoints are not equal, we get two contradictory equations. However, if they are equal, we are left with only one equation instead of two.
+Thus, if the third derivatives at the endpoints are not equal, we get two contradictory equations, and if they are equal, we are left with only one equation instead of two.
 
-To resolve this situation, we take the arithmetic mean of the third derivatives at each node and set the modules of $c_1$ and $c_2$ (the fictitious one) equal. 
+To resolve this situation, we take the arithmetic mean of the third derivatives at each node and equate the absolute values of $c_1$ and $c_2$ (which is fictitious). 
 
 Then we get the following expressions:
 - $c_1 = -\frac{h_1\left(f'''(x_1) + f'''(x_2)\right)}{8}$

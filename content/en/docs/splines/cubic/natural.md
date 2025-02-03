@@ -3,7 +3,9 @@ title = 'Natural'
 weight = 1
 +++
 
-A natural cubic spline is a spline where the second derivative is zero at the endpoints. It is a special case of the "Fixed-second" spline.
+A natural cubic spline is a spline where the second derivative is zero at the endpoints.
+
+It is a special case of the ["Fixed-second" spline](fixed-second.md).
 
 Conditions: $S_1''(x_1) = 0, \ S_{n-1}''(x_n) = 0$.
 

@@ -144,7 +144,8 @@ Thus, for the unambiguous determination of the coefficients, two additional cond
 
 #### I. Natural Spline
 
-A natural cubic spline is a spline for which the second derivative is zero at the endpoints. It is a special case of the "Fixed-second" spline.
+A natural cubic spline is a spline for which the second derivative is zero at the endpoints.\
+It is a special case of the "Fixed-second" spline.
 
 Conditions: $S_1''(x_1) = 0, \ S_{n-1}''(x_n) = 0$.
 
@@ -212,19 +213,17 @@ Matrix (in this case, not tridiagonal):
 
 $$
 \begin{bmatrix}
-	2h_1 + 2h_2 & h_2 & 0 & \dots & 0 & h_1 \\
-	h_2 & 2h_2 + 2h_3 & h_3 & \dots & 0 & 0 \\
-	0 & h_3 & 2h_3 + 2h_4 & \dots & 0 & 0 \\
-	\vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
-	0 & 0 & \dots & 2h_{n-3} + 2h_{n-2} & h_{n-2} & 0 \\
-	0 & 0 & \dots & h_{n-2} & 2h_{n-2} + 2h_{n-1} & h_{n-1} \\
-	h_1 & 0 & \dots & 0 & h_{n-1} & 2h_{n-1} + 2h_1
+	2h_1 + 2h_2 & h_2 & 0 & \dots & 0 & 0 & h_1 \\
+	h_2 & 2h_2 + 2h_3 & h_3 & \dots & 0 & 0 & 0 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+	0 & 0 & 0 & \dots & h_{n-2} & 2h_{n-2} + 2h_{n-1} & h_{n-1} \\
+	h_1 & 0 & 0 & \dots & 0 & h_{n-1} & 2h_{n-1} + 2h_1
 \end{bmatrix}
 \begin{bmatrix}
-	c_2 \\ c_3 \\ c_4 \\ \vdots \\ c_{n-2} \\ c_{n-1} \\ c_n
+	c_2 \\ c_3 \\ \vdots \\ c_{n-1} \\ c_n
 \end{bmatrix}
 = \begin{bmatrix}
-	R_1 \\ R_2 \\ R_3 \\ \vdots \\ R_{n-3} \\ R_{n-2} \\ R_{n-1}
+	R_1 \\ R_2 \\ \vdots \\ R_{n-2} \\ R_{n-1}
 \end{bmatrix}
 $$
 where $c_n = c_1$, $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{h_k}\right)$, and $R_{n-1} = 3\left(\frac{\delta_1}{h_1} - \frac{\delta_{n-1}}{h_{n-1}}\right)$.
@@ -234,7 +233,7 @@ where $c_n = c_1$, $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{
 #### IV. Parabolic-ends
 
 "Parabolic-ends" cubic spline is a spline where the boundary segments are quadratic curves or parabolas.\
-This spline is a special case of the "Fixed-third" spline, where the third derivatives at the ends are set to zero.
+It is a special case of the "Fixed-third" spline, where the third derivatives at the ends are set to zero.
 
 Conditions: $S_1'''(x_1) = 0, \ S_{n-1}'''(x_n) = 0$.
 
@@ -293,7 +292,7 @@ $$
 	R_0 \\ R_1 \\ \vdots \\ R_{n-2} \\ R_{n-1}
 \end{bmatrix}
 $$
-where $R_0 = 3\left(\frac{\delta_1}{h_1} - f'(x_1)\right)$, $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{h_k}\right)$, and $R_n = 3\left(f'(x_n) - \frac{\delta_{n-1}}{h_{n-1}}\right)$.
+where $R_0 = 3\left(\frac{\delta_1}{h_1} - f'(x_1)\right)$, $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{h_k}\right)$, and $R_{n-1} = 3\left(f'(x_n) - \frac{\delta_{n-1}}{h_{n-1}}\right)$.
 
 [More about the clamped spline.](clamped.md)
 

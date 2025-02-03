@@ -5,7 +5,7 @@ weight = 6
 
 A "Fixed-second" cubic spline is a spline where the second derivatives at the endpoints are fixed.
 
-A special case of the "Fixed-second" spline is the [natural spline](natural.md), where the second derivatives at the endpoints are set to zero.
+A special case is the [natural spline](natural.md), where the second derivatives at the endpoints are set to zero.
 
 Conditions: $S_1''(x_1) = f''(x_1), \ S_{n-1}''(x_n) = f''(x_n)$.
 
