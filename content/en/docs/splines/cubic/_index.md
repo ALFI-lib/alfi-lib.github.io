@@ -116,16 +116,16 @@ $$
 
 Thus, we have obtained $(n)$ variables $c_k$ (among them one dummy variable --- $c_n$) and $(n-2)$ equations for their determination (one of which was obtained using the dummy variable).
 
-At this point, we can create an incomplete tridiagonal matrix representing the system of linear algebraic equations (SLAE) for finding the values of the variables $c_k$:
+At this point, we can create an incomplete tridiagonal matrix representing the system of linear equations for finding the values of the variables $c_k$:
 
 $$
 \begin{bmatrix}
-	\boxed{?} & \boxed{?} & \boxed{?} & 0 & \dots & 0 & 0 \\
+	\boxed{?} & \boxed{?} & 0 & 0 & \dots & 0 & 0 \\
 	h_1 & 2h_1 + 2h_2 & h_2 & 0 & \dots & 0 & 0 \\
 	0 & h_2 & 2h_2 + 2h_3 & h_3 & \dots & 0 & 0 \\
 	\vdots & \vdots & \vdots & \ddots & \ddots & \vdots & \vdots \\
 	0 & 0 & 0 & \dots & h_{n-2} & 2h_{n-2} + 2h_{n-1} & h_{n-1} \\
-	0 & 0 & 0 & \dots & \boxed{?} & \boxed{?} & \boxed{?}
+	0 & 0 & 0 & \dots & 0 & \boxed{?} & \boxed{?}
 \end{bmatrix}
 \begin{bmatrix}
 	c_1 \\ c_2 \\ c_3 \\ \vdots \\ c_{n-1} \\ c_n
