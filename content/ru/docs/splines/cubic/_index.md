@@ -182,23 +182,24 @@ $$
 - $h_2c_1 + (-h_2 - h_1)c_2 + h_1c_3 = 0$
 - $h_{n-1}c_{n-2} + (-h_{n-1} - h_{n-2})c_{n-1} + h_{n-2}c_n = 0$
 
-Матрица (почти треугольная):
+Матрица:
 
 $$
 \begin{bmatrix}
-	h_2 & -h_2 - h_1 & h_1 & \dots & 0 & 0 & 0 \\
+	h_1 - h_2 & 2h_1 + h_2 & 0 & \dots & 0 & 0 & 0 \\
 	h_1 & 2h_1 + 2h_2 & h_2 & \dots & 0 & 0 & 0 \\
 	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
 	0 & 0 & 0 & \dots & h_{n-2} & 2h_{n-2} + 2h_{n-1} & h_{n-1} \\
-	0 & 0 & 0 & \dots & h_{n-1} & -h_{n-1} - h_{n-2} & h_{n-2}
+	0 & 0 & 0 & \dots & 0 & h_{n-2} + 2h_{n-2} & -h_{n-2} + h_{n-1}
 \end{bmatrix}
 \begin{bmatrix}
 	c_1 \\ c_2 \\ \vdots \\ c_{n-1} \\ c_n
 \end{bmatrix}
 = \begin{bmatrix}
-	0 \\ R_1 \\ \vdots \\ R_{n-2} \\ 0
+	R_0 \\ R_1 \\ \vdots \\ R_{n-2} \\ R_{n-1}
 \end{bmatrix}
 $$
+, где $R_0 = 3\frac{h_1}{h_1+h_2}\left(\frac{\delta_2}{h_2} - \frac{\delta_1}{h_1}\right)$, $R_k = 3\left(\frac{\delta_{k+1}}{h_{k+1}} - \frac{\delta_k}{h_k}\right)$, $R_{n-1} = 3\frac{h_{n-1}}{h_{n-1}+h_{n-2}}\left(\frac{\delta_{n-1}}{h_{n-1}} - \frac{\delta_{n-2}}{h_{n-2}}\right)$.
 
 [Подробнее про "Not-a-knot" сплайн.](not-a-knot.md)
 
