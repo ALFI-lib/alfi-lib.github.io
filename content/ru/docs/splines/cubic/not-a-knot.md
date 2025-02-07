@@ -66,7 +66,7 @@ $c_{n-1}(2h_{n-1}+h_{n-2}) + c_n(h_{n-1}-h_{n-2}) = 3\frac{h_{n-1}}{h_{n-1}+h_{n
 
 $$
 \boxed{
-	c_{n-1}(h_{n-2}+2h_{n-1}) + c_n(-h_{n-2}+h_{n-1}) = 3\frac{h_{n-1}}{h_{n-1}+h_{n-2}}\left(\frac{\delta_{n-1}}{h_{n-1}} - \frac{\delta_{n-2}}{h_{n-2}}\right)
+	(h_{n-2}+2h_{n-1})c_{n-1} + (-h_{n-2}+h_{n-1})c_n = 3\frac{h_{n-1}}{h_{n-1}+h_{n-2}}\left(\frac{\delta_{n-1}}{h_{n-1}} - \frac{\delta_{n-2}}{h_{n-2}}\right)
 }
 \tag{II.4}
 $$
