@@ -191,7 +191,7 @@ $$
 	h_1 & 2h_1 + 2h_2 & h_2 & \dots & 0 & 0 & 0 \\
 	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
 	0 & 0 & 0 & \dots & h_{n-2} & 2h_{n-2} + 2h_{n-1} & h_{n-1} \\
-	0 & 0 & 0 & \dots & 0 & h_{n-2} + 2h_{n-2} & -h_{n-2} + h_{n-1}
+	0 & 0 & 0 & \dots & 0 & h_{n-2} + 2h_{n-1} & -h_{n-2} + h_{n-1}
 \end{bmatrix}
 \begin{bmatrix}
 	c_1 \\ c_2 \\ \vdots \\ c_{n-1} \\ c_n
