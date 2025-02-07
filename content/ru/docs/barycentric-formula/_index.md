@@ -1,6 +1,6 @@
 +++
 title = 'Барицентрическая формула'
-weight = 4
+weight = 5
 bookFlatSection = true
 +++
 
