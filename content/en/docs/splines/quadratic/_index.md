@@ -182,7 +182,7 @@ A special case of ["Clamped (with index)"](./#xiv-clamped-with-index) for the la
 
 #### X. Semi-clamped
 
-The arithmetic mean between ["Clamped-start"](./#viii-clamped-start) and ["Clamped-end](./#ix-clamped-end).
+The arithmetic mean between ["Clamped-start"](./#viii-clamped-start) and ["Clamped-end"](./#ix-clamped-end).
 
 #### XI. Fixed-second-start
 
@@ -194,11 +194,11 @@ A special case of ["Fixed-second (with index)"](./#xv-fixed-second-with-index) f
 
 #### XIII. Semi-fixed-second
 
-The arithmetic mean between ["Fixed-second-start](./#xi-fixed-second-start) and ["Fixed-second-end"](./#xii-fixed-second-end).
+The arithmetic mean between ["Fixed-second-start"](./#xi-fixed-second-start) and ["Fixed-second-end"](./#xii-fixed-second-end).
 
 #### XIV. Clamped (with index)
 
-Given: $k$ — the index of the point (from $1$ to $n$ inclusive), $f'(x_k)$ — the value of the derivative at that point.
+Given: $k$ --- the index of the point ($1 \leqslant k \leqslant n$), $f'(x_k)$ --- the value of the derivative at that point.
 
 Based on this information, we can compute the coefficients for the segments $k-1$ and $k$ (if they exist).\
 If $k$ equals $1$ or $n$, then we can compute the coefficients for only the $k$-th or $(k-1)$-th segment, respectively.
@@ -223,11 +223,11 @@ Let us derive the coefficients for the $k$-th segment:
 - $b_k = f'(x_k)$.
 - From (3): $c_k = \frac{\delta_k - b_kh_k}{h_k^2} = \frac{\frac{\delta_k}{h_k} - b_k}{h_k} = \frac{\delta_k}{h_k^2} - \frac{b_k}{h_k}$.
 
-Now we can iteratively construct all the other segments (see [here](./#iterative-construction-formulas)).
+Now we can iteratively construct all the other segments (see [here](./#formulas-for-iterative-construction)).
 
 #### XV. Fixed-second (with index)
 
-Given: $k$ — the index of the SEGMENT (not of the point) (from $1$ to $n-1$ inclusive), $f''(x_k)$ — the value of the second derivative on this segment.
+Given: $k$ --- the index of the SEGMENT (not of the point) ($1 \leqslant k \leqslant n-1$), $f''(x_k)$ --- the value of the second derivative on this segment.
 
 Based on this information, we can compute the coefficients for the $k$-th segment.
 
@@ -240,11 +240,11 @@ Let us derive the coefficients for the $k$-th segment:
 - $c_k = \frac{f''(x_k)}{2}$.
 - From (2): $b_k = \frac{\delta_k - c_kh_k^2}{h_k} = \frac{\delta_k}{h_k} - c_kh_k$.
 
-Now we can iteratively construct all the other segments (see [here](./#iterative-construction-formulas)).
+Now we can iteratively construct all the other segments (see [here](./#formulas-for-iterative-construction)).
 
 #### XVI. Not-a-knot (with index)
 
-Given: $k$ — the index of the point (from $2$ to $n-1$ inclusive — i.e. excluding the end points), at which the second derivative is continuous, meaning that the value of the second derivative on the left and right segments at this point coincide.
+Given: $k$ --- the index of the point ($2 \leqslant k \leqslant n-1$ --- excluding the end points), at which the second derivative is continuous, meaning that the value of the second derivative on the left and right segments at this point coincide.
 
 Based on this information, we can compute the coefficients for the $(k-1)$-th and $k$-th segments.
 
@@ -272,4 +272,4 @@ Let us derive all the coefficients:
 	- $b_k = \frac{\delta_k - c_kh_k^2}{h_k} = \frac{\delta_k}{h_k} - c_kh_k$,
 	- Also, to find one coefficient "b" after the other has been computed, you can use formula (8).
 
-Now we can iteratively construct all the other segments (see [here](./#iterative-construction-formulas)).
+Now we can iteratively construct all the other segments (see [here](./#formulas-for-iterative-construction)).
