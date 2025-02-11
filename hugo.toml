@@ -28,6 +28,7 @@ disableDefaultLanguageRedirect = true
 		inline = [['$', '$'], ['\(', '\)']]
 [markup.tableOfContents]
 	startLevel = 1
+	endLevel = 4
 
 [privacy]
 [privacy.disqus]
