@@ -227,17 +227,17 @@ Now we can iteratively construct all the other segments (see [here](./#formulas-
 
 #### XV. Fixed-second (with index)
 
-Given: $k$ --- the index of the SEGMENT (not of the point) ($1 \leqslant k \leqslant n-1$), $f''(x_k)$ --- the value of the second derivative on this segment.
+Given: $k$ --- the index of the SEGMENT (not of the point) ($1 \leqslant k \leqslant n-1$), $f''$ --- the value of the second derivative on this segment.
 
 Based on this information, we can compute the coefficients for the $k$-th segment.
 
 The condition gives the equation:
 
-$$2c_k = f''(x_k)$$
+$$2c_k = f''$$
 
 Let us derive the coefficients for the $k$-th segment:
 - From (1): $a_k = y_k$.
-- $c_k = \frac{f''(x_k)}{2}$.
+- $c_k = \frac{f''}{2}$.
 - From (2): $b_k = \frac{\delta_k - c_kh_k^2}{h_k} = \frac{\delta_k}{h_k} - c_kh_k$.
 
 Now we can iteratively construct all the other segments (see [here](./#formulas-for-iterative-construction)).
