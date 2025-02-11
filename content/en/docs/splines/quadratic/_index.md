@@ -110,18 +110,7 @@ $$
 
 #### Formulas for Iterative Construction
 
-Let us derive the formulas for computing the next segment given the known coefficients for the previous one:
-
-Given: $a_k, b_k, c_k$. Derive $a_{k+1}, b_{k+1}, c_{k+1}$. $_{k \in \left\{1,...,n-2\right\}}$.
-
-1. $a_{k+1}$: From (1): $a_{k+1} = y_{k+1}$.
-2. $b_{k+1}$: Several ways:
-	- From (5): $b_{k+1} = b_k + 2c_kh_k$.
-	- From (7): $b_{k+1} = c_kh_k + \frac{\delta_k}{h_k}$.
-	- From (8): $b_{k+1} = 2\frac{\delta_k}{h_k} - b_k$.
-3. $c_{k+1}$: From (3): $c_k = \frac{\delta_k - b_kh_k}{h_k^2} = \frac{\frac{\delta_k}{h_k} - b_k}{h_k} = \frac{\delta_k}{h_k^2} - \frac{b_k}{h_k}$.
-
-Let us now derive the formulas for computing the previous segment given the known coefficients of the next segment:
+Let us derive the formulas for computing the previous segment given the known coefficients of the next one:
 
 Given: $a_{k+1}, b_{k+1}, c_{k+1}$. Derive $a_k, b_k, c_k$. $_{k \in \left\{1,...,n-2\right\}}$.
 
@@ -131,6 +120,17 @@ Given: $a_{k+1}, b_{k+1}, c_{k+1}$. Derive $a_k, b_k, c_k$. $_{k \in \left\{1,..
 	- From (3): $c_k = \frac{\delta_k - b_kh_k}{h_k^2} = \frac{\frac{\delta_k}{h_k} - b_k}{h_k} = \frac{\delta_k}{h_k^2} - \frac{b_k}{h_k}$.
 	- From (6): $c_k = \frac{b_{k+1} - b_k}{2h_k}$.
 	- From (7): $c_k = \frac{b_{k+1}h_k - \delta_k}{h_k^2} = \frac{b_{k+1} - \frac{\delta_k}{h_k}}{h_k} = \frac{b_{k+1}}{h_k} - \frac{\delta_k}{h_k^2}$.
+
+Let us derive the formulas for computing the next segment given the known coefficients of the previous one:
+
+Given: $a_{k-1}, b_{k-1}, c_{k-1}$. Derive $a_k, b_k, c_k$. $_{k \in \left\{2,...,n-1\right\}}$.
+
+1. $a_k$: From (1): $a_k = y_k$.
+2. $b_k$: Several ways:
+	- From (5): $b_k = b_{k-1} + 2c_{k-1}h_{k-1}$.
+	- From (7): $b_k = c_{k-1}h_{k-1} + \frac{\delta_{k-1}}{h_{k-1}}$.
+	- From (8): $b_k = 2\frac{\delta_{k-1}}{h_{k-1}} - b_{k-1}$.
+3. $c_k$: From (3): $c_k = \frac{\delta_k - b_kh_k}{h_k^2} = \frac{\frac{\delta_k}{h_k} - b_k}{h_k} = \frac{\delta_k}{h_k^2} - \frac{b_k}{h_k}$.
 
 Thus, if we compute the coefficients for one segment, we can construct all the other segments.
 
