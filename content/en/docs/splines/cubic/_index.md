@@ -426,4 +426,4 @@ Coefficients for the $k-1$-th and $k$-th segments:
 
 As we can see, to compute the coefficients, we need to perform division by the expression $h_k^2 - h_{k-1}^2$, which equals zero if the steps $h_{k-1}$ and $h_k$ are equal.
 
-Therefore, in particular, when interpolating using uniformly spaced points, it is **impossible** to set these two conditions at a single point.
+Therefore, in particular, when interpolating using uniformly spaced points, it is **impossible** to set these both "Fixed-second" and "Not-a-knot" conditions at a single point.
