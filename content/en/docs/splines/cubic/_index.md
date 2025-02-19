@@ -31,8 +31,7 @@ Rewriting the general conditions using coefficients:
 3. $S_k'(x_{k+1}) = S_{k+1}'(x_{k+1}) \Longleftrightarrow b_k + 2c_kh_k + 3d_kh_k^2 = b_{k+1}$
 4. $S_k''(x_{k+1}) = S_{k+1}''(x_{k+1}) \Longleftrightarrow 2c_k + 6d_kh_k = 2c_{k+1}$ (can be divided by 2)
 
-Introduce a dummy variable $c_n = 3d_{n-1}h_{n-1} + c_{n-1}$, which can be rewritten as\
-$c_{n-1} + 3d_{n-1}h_{n-1} = c_n$, thus extending equality under point `4.` to $k = n - 1$.
+Introduce a dummy variable $c_n = 3d_{n-1}h_{n-1} + c_{n-1}$, which can be rewritten as $c_{n-1} + 3d_{n-1}h_{n-1} = c_n$, thus extending equality under point `4.` to $k = n - 1$.
 
 As a result, we obtain:
 
@@ -362,3 +361,69 @@ Special case: $n = 2$:
 - $c_2 = -c_1$
 
 [More about the "Fixed-third" spline.](fixed-third.md)
+
+### Arbitrary Conditions
+
+We can set two arbitrary conditions for two given points.
+
+In this case, we can construct a "sub-spline", whose initial and final points are these two points.\
+Note: there may be subtleties for Fixed-third conditions, for which segments are specified, and for Not-a-knot conditions, for which the second and penultimate points are specified.
+
+At these points the necessary equations can be set, corresponding to the conditions for the first or last point (see the variants described above).
+
+Next we can iteratively construct the preceding and subsequent segments, extending the sub-spline to the ends of the spline.
+
+Below are the formulas for the iterative calculation of the coefficients of the $k$-th segment, given the known coefficients of the $(k+1)$-th or $(k-1)$-th segment.
+
+#### Formulas for Iterative Construction
+
+Given: $a_{k+1}, b_{k+1}, c_{k+1}, d_{k+1}$. Derive $a_k, b_k, c_k, d_k$. $_{k \in \left\{1,...,n-2\right\}}$.
+
+1. $d_k = \frac{c_{k+1} - \frac{b_{k+1}}{h_k} + \frac{\delta_k}{h_k^2}}{h_k}$.
+2. $c_k = c_{k+1} - 3d_kh_k$.
+3. $b_k = \frac{\delta_k}{h_k} - d_kh_k^2 - c_kh_k$.
+4. $a_k = y_k$.
+
+Given: $a_{k-1}, b_{k-1}, c_{k-1}$. Derive $a_k, b_k, c_k$. $_{k \in \left\{2,...,n-1\right\}}$.
+
+1. $a_k = y_k$.
+2. $b_k = 3d_{k-1}h_{k-1}^2 + 2c_{k-1}h_{k-1} + b_{k-1}$.
+3. $c_k = 3d_{k-1}h_{k-1} + c_{k-1}$.
+4. $d_k = \frac{\frac{\delta_k}{h_k^2} - c_k - \frac{b_k}{h_k}}{h_k}$.
+
+#### Notes
+
+**1. "Clamped" and "Fixed-second" Conditions at a Single Point**
+
+The general scheme does not cover the case where both "Clamped" and "Fixed-second" conditions are specified at a single point.
+
+Let's derive the coefficients separately for this case.
+
+Let at point $x_k$ the first derivative $f'$ and the second derivative $f''$ be specified.
+
+Coefficients for the previous ($k-1$-th) segment:
+- $a_{k-1} = y_{k-1}$
+- $b_{k-1} = \frac{3\delta_{k-1}}{h_{k-1}} + \frac{f''h_{k-1}}{2} - 2f'$
+- $c_{k-1} = \frac{3f'}{h_{k-1}} - \frac{3\delta_{k-1}}{h_{k-1}^2} - f''$
+- $d_{k-1} = \frac{f''}{2h_{k-1}} - \frac{f'}{h_{k-1}^2} + \frac{\delta_{k-1}}{h_{k-1}^3}$
+
+Coefficients for the current ($k$-th) segment:
+- $a_k = y_k$
+- $b_k = f'$
+- $c_k = \frac{f''}{2}$
+- $d_k = \frac{\delta_k}{h_k^3} - \frac{f'}{h_k^2} - \frac{f''}{2h_k}$
+
+**2. "Fixed-second" and "Not-a-knot" Conditions at a Single Point**
+
+Coefficients for the $k-1$-th and $k$-th segments:
+- $a_{k-1} = y_{k-1}$
+- $a_k = y_k$
+- $c_k = \frac{f''(x_k)}{2}$
+- $c_{k-1} = \frac{f'' - 6dh_{k-1}}{2}$
+- $b_{k-1} = \frac{\delta_{k-1}}{h_{k-1}} - \frac{f''h_{k-1}}{2} + 2dh_{k-1}^2$
+- $b_k = \frac{\delta_{k-1}}{h_{k-1}} + \frac{f''h_{k-1}}{2} - dh_{k-1}^2$
+- $d_{k-1} = d_k = d = \frac{\frac{\delta_k}{h_k} - \frac{\delta_{k-1}}{h_{k-1}} - \frac{f''(x_k)}{2}h_{k-1} - \frac{f''(x_k)}{2}h_k}{h_k^2 - h_{k-1}^2}$
+
+As we can see, to compute the coefficients, we need to perform division by the expression $h_k^2 - h_{k-1}^2$, which equals zero if the steps $h_{k-1}$ and $h_k$ are equal.
+
+Therefore, in particular, when interpolating using uniformly spaced points, it is **impossible** to set these both "Fixed-second" and "Not-a-knot" conditions at a single point.
