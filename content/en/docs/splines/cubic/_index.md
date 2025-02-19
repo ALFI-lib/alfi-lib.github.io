@@ -390,3 +390,40 @@ Given: $a_{k-1}, b_{k-1}, c_{k-1}$. Derive $a_k, b_k, c_k$. $_{k \in \left\{2,..
 2. $b_k = 3d_{k-1}h_{k-1}^2 + 2c_{k-1}h_{k-1} + b_{k-1}$.
 3. $c_k = 3d_{k-1}h_{k-1} + c_{k-1}$.
 4. $d_k = \frac{\frac{\delta_k}{h_k^2} - c_k - \frac{b_k}{h_k}}{h_k}$.
+
+#### Notes
+
+**1. "Clamped" and "Fixed-second" Conditions at a Single Point**
+
+The general scheme does not cover the case where both "Clamped" and "Fixed-second" conditions are specified at a single point.
+
+Let's derive the coefficients separately for this case.
+
+Let at point $x_k$ the first derivative $f'$ and the second derivative $f''$ be specified.
+
+Coefficients for the previous ($k-1$-th) segment:
+- $a_{k-1} = y_{k-1}$
+- $b_{k-1} = \frac{3\delta_{k-1}}{h_{k-1}} + \frac{f''h_{k-1}}{2} - 2f'$
+- $c_{k-1} = \frac{3f'}{h_{k-1}} - \frac{3\delta_{k-1}}{h_{k-1}^2} - f''$
+- $d_{k-1} = \frac{f''}{2h_{k-1}} - \frac{f'}{h_{k-1}^2} + \frac{\delta_{k-1}}{h_{k-1}^3}$
+
+Coefficients for the current ($k$-th) segment:
+- $a_k = y_k$
+- $b_k = f'$
+- $c_k = \frac{f''}{2}$
+- $d_k = \frac{\delta_k}{h_k^3} - \frac{f'}{h_k^2} - \frac{f''}{2h_k}$
+
+**2. "Fixed-second" and "Not-a-knot" Conditions at a Single Point**
+
+Coefficients for the $k-1$-th and $k$-th segments:
+- $a_{k-1} = y_{k-1}$
+- $a_k = y_k$
+- $c_k = \frac{f''(x_k)}{2}$
+- $c_{k-1} = \frac{f'' - 6dh_{k-1}}{2}$
+- $b_{k-1} = \frac{\delta_{k-1}}{h_{k-1}} - \frac{f''h_{k-1}}{2} + 2dh_{k-1}^2$
+- $b_k = \frac{\delta_{k-1}}{h_{k-1}} + \frac{f''h_{k-1}}{2} - dh_{k-1}^2$
+- $d_{k-1} = d_k = d = \frac{\frac{\delta_k}{h_k} - \frac{\delta_{k-1}}{h_{k-1}} - \frac{f''(x_k)}{2}h_{k-1} - \frac{f''(x_k)}{2}h_k}{h_k^2 - h_{k-1}^2}$
+
+As we can see, to compute the coefficients, we need to perform division by the expression $h_k^2 - h_{k-1}^2$, which equals zero if the steps $h_{k-1}$ and $h_k$ are equal.
+
+Therefore, in particular, when interpolating using uniformly spaced points, it is **impossible** to set these two conditions at a single point.
