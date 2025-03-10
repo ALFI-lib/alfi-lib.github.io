@@ -13,7 +13,7 @@ However, its capabilities are not limited to the values of the interpolation pol
 
 Let’s recall the [improved Lagrange polynomial formula](../polynomials/imp_lagrange.md):
 
-$$\boxed{P(x) = l(x) \sum_{i=0}^n{\frac{w_i}{x-x_i} y_i}}$$
+$$P(x) = l(x) \sum_{i=0}^n{\frac{w_i}{x-x_i} y_i}$$
 
 Note that for the function $f \equiv 1$, all values of $y_i$ will be equal to 1, so the interpolation formula for this function will look like:
 
