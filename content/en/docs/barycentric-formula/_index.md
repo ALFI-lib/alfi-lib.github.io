@@ -89,3 +89,4 @@ $w_i = (-1)^i \delta_i \sin{\frac{i\pi}{2n+1}}, \quad \delta_i =
 ## References
 
 1. Jean-Paul Berrut and Lloyd N. Trefethen, [*Barycentric Lagrange Interpolation*](https://people.maths.ox.ac.uk/trefethen/barycentric.pdf), SIAM Review, Vol. 46, No. 3, pp. 501–517, 2004.
+2. J.-P. Berrut, *Baryzentrische Formeln zur trigonometrischen Interpolation* I, Z. Angew. Math. Phys. (ZAMP), 35 (1984), pp. 91–105.
