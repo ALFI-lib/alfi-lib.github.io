@@ -52,7 +52,7 @@ $x_i = -\cos{\frac{(2i+1)\pi}{2n+2}} = \cos{\frac{(2n-2i+1)\pi}{2n+2}}, \quad i 
 
 $w_i = (-1)^i \sin{\frac{(2i+1)\pi}{2n+2}}$
 
-The same weights are obtained for nodes "stretched" to the segment boundaries (the nodes are scaled so that the outermost ones lie on the edges of the segment):
+The same weights are obtained for nodes "stretched" to the segment boundaries:
 
 $x_{i_{stretched}} = \frac{x_i}{\cos{\frac{\pi}{2n+2}}} = -
 \frac{\cos{\frac{(2i+1)\pi}{2n+2}}}{\cos{\frac{\pi}{2n+2}}} = \frac{\cos{\frac{(2n-2i+1)\pi}{2n+2}}}{\cos{\frac{\pi}{2n+2}}}, \quad i = 0,...,n$
