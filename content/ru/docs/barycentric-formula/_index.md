@@ -52,6 +52,13 @@ $x_i = -\cos{\frac{(2i+1)\pi}{2n+2}} = \cos{\frac{(2n-2i+1)\pi}{2n+2}}, \quad i 
 
 $w_i = (-1)^i \sin{\frac{(2i+1)\pi}{2n+2}}$
 
+Такие же веса получаются для "растянутых" до границ отрезка узлов:
+
+$x_{i_{stretched}} = \frac{x_i}{\cos{\frac{\pi}{2n+2}}} = -
+\frac{\cos{\frac{(2i+1)\pi}{2n+2}}}{\cos{\frac{\pi}{2n+2}}} = \frac{\cos{\frac{(2n-2i+1)\pi}{2n+2}}}{\cos{\frac{\pi}{2n+2}}}, \quad i = 0,...,n$
+
+$w_{i_{stretched}} = w_i$
+
 ### 3. Узлы Чебышёва второго рода
 
 $x_i = -\cos{\frac{in}{n}} = \cos{\frac{(n-i)\pi}{n}}, \quad i = 0,...,n$
