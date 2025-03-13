@@ -52,7 +52,7 @@ $x_i = -\cos{\frac{(2i+1)\pi}{2n+2}} = \cos{\frac{(2n-2i+1)\pi}{2n+2}}, \quad i 
 
 $w_i = (-1)^i \sin{\frac{(2i+1)\pi}{2n+2}}$
 
-### 3. "Stretched" Chebyshev nodes of the first kind
+#### 2.1 "Stretched" Chebyshev nodes of the first kind
 
 For nodes "stretched" to the segment boundaries, the same weights are obtained:
 
@@ -61,7 +61,7 @@ $\displaystyle x_{i_{stretched}} = \frac{x_i}{\cos{\frac{\pi}{2n+2}}} = -
 
 $w_{i_{stretched}} = w_i = (-1)^i \sin{\frac{(2i+1)\pi}{2n+2}}$
 
-### 4. "Augmented" Chebyshev nodes of the first kind
+### 3. "Augmented" Chebyshev nodes of the first kind
 
 To obtain "augmented" $(n+1)$ Chebyshev nodes of the first kind, we need to add the points $\{-1\}$ and $\{1\}$ to the $(n-1)$ Chebyshev nodes of the first kind:
 
@@ -83,7 +83,7 @@ w_i =
 \end{cases}
 $
 
-### 5. Chebyshev nodes of the second kind
+### 4. Chebyshev nodes of the second kind
 
 $x_i = -\cos{\frac{in}{n}} = \cos{\frac{(n-i)\pi}{n}}, \quad i = 0,...,n$
 
@@ -93,7 +93,7 @@ $w_i = (-1)^i \delta_i, \quad \delta_i =
 	1, & \text{otherwise}
 \end{cases}$
 
-### 6. Chebyshev nodes of the third kind
+### 5. Chebyshev nodes of the third kind
 
 In other sources, these may be called Chebyshev nodes of the *fourth* kind.
 
@@ -105,7 +105,19 @@ $w_i = (-1)^i \delta_i \cos{\frac{i\pi}{2n+1}}, \quad \delta_i =
 	1, & \text{otherwise}
 \end{cases}$
 
-### 7. Chebyshev nodes of the fourth kind
+#### 5.1 "Stretched" Chebyshev nodes of the third kind
+
+For nodes "stretched" to the segment boundaries (specifically, to the right boundary since the first point is already on the left boundary), the same weights are obtained:
+
+$\displaystyle x_{i_{stretched}} = -1 + \frac{2(x_i + 1)}{1 + \cos{\frac{1}{2n+1}}}, \quad i = 0,...,n$
+
+$w_{i_{stretched}} = w_i = (-1)^i \delta_i \cos{\frac{i\pi}{2n+1}}, \quad \delta_i =
+\begin{cases}
+	\frac{1}{2}, & i = 0 \\
+	1, & \text{otherwise}
+\end{cases}$
+
+### 6. Chebyshev nodes of the fourth kind
 
 In other sources, these may be called Chebyshev nodes of the *third* kind.
 
@@ -116,6 +128,19 @@ $w_i = (-1)^i \delta_i \sin{\frac{i\pi}{2n+1}}, \quad \delta_i =
 	\frac{1}{2}, & i = n \\
 	1, & \text{otherwise}
 \end{cases}$
+
+#### 6.1 "Stretched" Chebyshev nodes of the fourth kind
+
+For nodes "stretched" to the segment boundaries (specifically, to the left boundary since the last point is already on the right boundary), the same weights are obtained:
+
+$\displaystyle x_{i_{stretched}} = 1 + \frac{2(x_i - 1)}{1 + \cos{\frac{1}{2n+1}}}, \quad i = 0,...,n$
+
+$w_{i_{stretched}} = w_i = (-1)^i \delta_i \sin{\frac{i\pi}{2n+1}}, \quad \delta_i =
+\begin{cases}
+	\frac{1}{2}, & i = n \\
+	1, & \text{otherwise}
+\end{cases}$
+
 
 ## References
 
